@@ -26,8 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let cellTitle = row.insertCell(1)
         cellTitle.innerHTML = image.title;
 
+        let fullPath= "images/" +image.name;
+
         let cellThumb = row.insertCell(2);
-        cellThumb.innerHTML = image.name;
+        cellThumb.innerHTML = `
+            <a href= "${fullPath}" target="_blank">
+            <img src="${fullPath}" class="thumb">
+            `;
 
     }
 

@@ -19,3 +19,11 @@ select, table, button, img {
     margin: 1rem;
 
 }
+
+.thumb{
+    width:3rem;
+    height:3rem;
+    /* object-fit: contain; */
+    object-fit: cropped;
+
+}
