@@ -1,47 +1,10 @@
-<style>
-    body {background: #684040; color: silver;}
-</style>
+<head>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/data.js"></script>
+    <script src="scripts/main.js"></script>
+</head>
 <body>
     <select id="image_list"></select>
     <button id="clear">Clear</button>
     <div id="output">Results will be Here</div>
 </body>
-<script>
-   const images = [
-    {name:"image1.jpg", title: "Fast and Furious"},                    
-    {name:"image2.jpg", title:"Transformers"}, 
-    {name:"image3.jpg", title:"Spider Man"},  
-    {name:"image4.jpg", title:"The Little Mermaid"}, 
-    {name:"image5.jpg", title:"The Guardians of Galaxy"},     
-    {name:"image6.jpg", title:"The Guardians of Galaxy"},
-    {name:"image7.jpg", title:"Mario Bros"},
-    {name:"image8.jpg", title:"Elemental"},
-    {name:"image9.jpg", title:"The Book Club"}
-];
-image_list.innerHTML = "<option>Make a Slection</option> "
-images.forEach(image=>{
-    let option =document.createElement("option");
-    option.innerHTML=image.title;
-    option.value = image.name;
-    image_list.appendChild(option);
-})
-
-image_list.addEventListener("change", e=>{
-    if(image_list.selectIndex==0){ //IS FIRST ITEM "make a selection" e.g 0,or no items e.g -1
-        return; //DON NOTHING
-    }
-    let name=image_list.selectedOptions[0].value;
-    // alert(name);
-    let img= document.createElement("img");
-    img.src = "images/" + name;
-    output.appendChild(img);
-    // end on change image list
-
-})
-
-clear.addEventListener("click",()=> {
-output.innerHTML="";
-image_list.selectIndex=0; //set select to first item, -1 for blank
-
-})// end clear button
-</script>
