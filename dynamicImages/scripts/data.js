@@ -1,6 +1,6 @@
 const images = [
-    {year: 2023, name:"image1.jpg", title: "Fast and Furious"},                    
-    {year: 2023, name:"image2.jpg", title:"Transformers"}, 
+    {year: 2020, name:"image1.jpg", title: "Fast and Furious"},                    
+    {year: 2021, name:"image2.jpg", title:"Transformers"}, 
     {year: 2022, name:"image3.jpg", title:"Spider Man"},  
     {year: 2023, name:"image4.jpg", title:"The Little Mermaid"}, 
     {year: 2024, name:"image5.jpg", title:"The Guardians of Galaxy"},     

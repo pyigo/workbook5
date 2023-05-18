@@ -2,21 +2,27 @@
 //  Best way to delay content loaded is to use DOMContentLoaded instead of window onload
 document.addEventListener("DOMContentLoaded", ()=>{
 
+    const year = document.getElementById("year")
     const image_list = document.getElementById("image_list")
     const output = document.getElementById("output")
     const clear = document.getElementById("clear")
-    
+
 image_list.innerHTML = "<option>Make a Slection</option> "
 images.forEach(image=>{
     let option =document.createElement("option");
     option.innerHTML=image.title;
     option.value = image.name;
     image_list.appendChild(option);
+}); //END Images for each
+
+year.addEventListener("change", ()=>{
+    let selectedYear = year.selectedOptions[0].value;
+    alert(selectedYear);
 })
 
 image_list.addEventListener("change", e=>{
-    if(image_list.selectIndex==0){ //IS FIRST ITEM "make a selection" e.g 0,or no items e.g -1
-        return; //DON NOTHING
+    if(image_list.selectedIndex==0){ //IS FIRST ITEM "make a selection" e.g 0,or no items e.g -1
+        return; //DO NOTHING
     }
     let name=image_list.selectedOptions[0].value;
     // alert(name);
@@ -29,7 +35,7 @@ image_list.addEventListener("change", e=>{
 
 clear.addEventListener("click",()=> {
 output.innerHTML="";
-image_list.selectIndex=0; //set select to first item, -1 for blank
+image_list.selectedIndex=0; //set select to first item, -1 for blank
 
 })// end clear button
 
