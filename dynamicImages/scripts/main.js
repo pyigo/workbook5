@@ -16,24 +16,27 @@ document.addEventListener("DOMContentLoaded", () => {
         image_list.appendChild(option);
     }); //END Images for each
 
+
+    function addMovieImageRow(image) {
+        let row = tbody.insertRow(-1) // end of rows
+
+        let cellYear = row.insertCell(0);
+        cellYear.innerHTML = image.year;
+
+        let cellTitle = row.insertCell(1)
+        cellTitle.innerHTML = image.title;
+
+        let cellThumb = row.insertCell(2);
+        cellThumb.innerHTML = image.name;
+
+    }
+
     year.addEventListener("change", () => {
         tbody.innerHTML = "";
         let selectedYear = year.selectedOptions[0].value;
         //alert(selectedYear);
-        images.filter((i)=>i.year==selectedYear).forEach((image) => {
-  
-                let row = tbody.insertRow(-1) // end of rows
+        images.filter((i) => i.year == selectedYear).forEach(addMovieImageRow)
 
-                let cellYear = row.insertCell(0);
-                cellYear.innerHTML = image.year;
-
-                let cellTitle = row.insertCell(1)
-                cellTitle.innerHTML = image.title;
-
-                let cellThumb = row.insertCell(2);
-                cellThumb.innerHTML = image.name;
-
-        })
     }) //END YEAR CHANGE EVENT
 
     image_list.addEventListener("change", e => {
