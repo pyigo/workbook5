@@ -1,8 +1,9 @@
 <style>
-    body {background: #333333; color: silver;}
+    body {background: #684040; color: silver;}
 </style>
 <body>
     <select id="image_list"></select>
+    <button id="clear">Clear</button>
     <div id="output">Results will be Here</div>
 </body>
 <script>
@@ -26,7 +27,21 @@ images.forEach(image=>{
 })
 
 image_list.addEventListener("change", e=>{
+    if(image_list.selectIndex==0){ //IS FIRST ITEM "make a selection" e.g 0,or no items e.g -1
+        return; //DON NOTHING
+    }
     let name=image_list.selectedOptions[0].value;
-    alert(name);
+    // alert(name);
+    let img= document.createElement("img");
+    img.src = "images/" + name;
+    output.appendChild(img);
+    // end on change image list
+
 })
+
+clear.addEventListener("click",()=> {
+output.innerHTML="";
+image_list.selectIndex=0; //set select to first item, -1 for blank
+
+})// end clear button
 </script>
