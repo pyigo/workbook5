@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const tbody = document.querySelector("#list tbody")
-
     const year = document.getElementById("year")
     const image_list = document.getElementById("image_list")
     const output = document.getElementById("output")
@@ -21,9 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         tbody.innerHTML = "";
         let selectedYear = year.selectedOptions[0].value;
         //alert(selectedYear);
-        images.forEach((image) => {
-            if (selectedYear == image.year) {
-                
+        images.filter((i)=>i.year==selectedYear).forEach((image) => {
+  
                 let row = tbody.insertRow(-1) // end of rows
 
                 let cellYear = row.insertCell(0);
@@ -32,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 let cellTitle = row.insertCell(1)
                 cellTitle.innerHTML = image.title;
 
-            }
+                let cellThumb = row.insertCell(2);
+                cellThumb.innerHTML = image.name;
 
         })
     }) //END YEAR CHANGE EVENT
