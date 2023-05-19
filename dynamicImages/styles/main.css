@@ -33,3 +33,23 @@ select, table, button, img {
     height: 100vh;
     object-fit: cover;
 }
+
+.dialog{
+    width:98vw;
+    height: 98vh;
+    border: 1px solid black;
+    position: fixed;
+    top: 1vh;
+    left: 1vw;
+    background-color: #cccccc;
+    box-shadow: 1vw 1vh 3vh 3vw #00000088;
+}
+
+.dialog.hidden{
+    display: none;
+}
+
+.title{
+    background-color: black;
+    text-align: center;
+}

@@ -32,8 +32,8 @@
     <select id="image_list"></select>
     <button id="clear">Clear</button>
     <div id="output"></div>
-    <div id="dialog">
-        <div class="title">Show Image <button class="close">X</button></div>
-        <img src="gigantic" alt="" src="">
+    <div class="dialog hidden">
+        <div class="title">Show Image <button class="close" onclick="document.querySelector('dialog').classList.add('hidden');">X</button></div>
+        <img class="gigantic" alt="" src="">
     </div>
 </body>
